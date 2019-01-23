@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 public class Matriz {
 	
-	public static Entrada recibirParametros() {
+	public static Entrada IngresarParametros() {
 		
 		Entrada entradas;
 		int filas,columnas;
@@ -19,6 +19,14 @@ public class Matriz {
 		
 		return miEntradas;
 		
+	}
+	
+	public static int [][] llenarMatriz(int filas, int columnas){
+		
+		
+		int [][] matriz = new int [filas][columnas];
+		
+		return matriz;
 	}
 	
 
