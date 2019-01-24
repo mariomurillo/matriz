@@ -1,13 +1,16 @@
 package matriz;
 
+import java.util.Random;
 import java.util.Scanner;
 
 public class Matriz {
 	
+	public static int filas, columnas;
+	
 	public static Entrada IngresarParametros() {
 		
 		Entrada entradas;
-		int filas,columnas;
+		//int filas,columnas;
 		Scanner entrada = new Scanner(System.in);
 		System.out.println("ingrese el numero de filas que quiere para su matriz");
 		filas= (entrada.nextInt());
@@ -23,10 +26,35 @@ public class Matriz {
 	
 	public static int [][] llenarMatriz(int filas, int columnas){
 		
-		
+		int aux;
 		int [][] matriz = new int [filas][columnas];
+		Random rnd=new Random();
+		
+		
+	for (int i=0; i<filas; i++) {
+			
+			for(int j=0; j<columnas; j++){
+			
+				aux=  rnd.nextInt(25);
+				
+				matriz [i][j]= aux;
+		}
+	}
 		
 		return matriz;
+	}
+	
+	public static void mostrarMatrizLlena (int matriz [][]) {
+		
+		
+		  for (int i=0; i<filas; i++) {
+				
+			     for(int j=0; j<columnas; j++){
+					
+					System.out.print(matriz[i][j]+"\t");
+				}
+			     System.out.println("\n");
+		   }
 	}
 	
 
@@ -34,7 +62,8 @@ public class Matriz {
 		 
 		//https://github.com/juliotobon/matriz.git
 		
-
+		IngresarParametros();
+		mostrarMatrizLlena(llenarMatriz(filas, columnas));		
 	
 		
 	}
